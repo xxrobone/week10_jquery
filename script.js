@@ -28,14 +28,29 @@ $('.btn:first-of-type').on({
 $('.nav li').on({
   mouseenter: function () {
     $(this).addClass('active');
-    $(this).find('.submenu').toggle();
+    /*  $(this).find('.submenu').toggle(); */
   },
   mouseleave: function () {
     $(this).removeClass('active');
-    $(this).find('.submenu').toggle();
+    /* $(this).find('.submenu').toggle(); */
   },
-  click: function () {
-    /* $(this).siblings().find('.submenu').hide(); */
-    $(this).find('.submenu').toggle();
-  },
+  click: function () {},
 });
+
+// finding the parent to the submenu on click
+$('.nav li > .submenu')
+  .parent()
+  .click(function (e) {
+      e.preventDefault();
+      // prevents bubbling up the dom tree
+    e.stopPropagation();
+    // submenu variable is the list (children of submenu - ul )
+    const submenu = $(this).children('.submenu');
+    // Checks CSS content for display:[none|block]
+    // found answer here https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery
+    if ($(submenu).is(':hidden')) {
+      $(submenu).slideDown(200);
+    } else {
+      $(submenu).slideUp(200);
+    }
+  });
