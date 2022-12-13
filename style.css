@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
     background-color: #282828;
     color: #fafafa;
+    overflow-x: hidden;
 }
 
 header {
@@ -79,7 +80,7 @@ nav {
 }
 
 .nav li:last-child {
-    margin-right: 5rem;
+    margin-right: 10rem;
 }
 
 .nav li a {
@@ -93,22 +94,28 @@ text-transform: uppercase;
 .submenu {
     display: none; 
     position: absolute; 
-    left: -1px; 
+    left: 0px; 
     top: 100%; 
-    width: 150px; 
+    width: 100%; 
     margin-top: 1px;
 }
 
-.submenu li {
-    padding: 5px 10px; 
+.submenu > li {
+    padding: 0.25rem 1rem;
+    width: 240px;
+    color: #282828;
+    background-color: aliceblue;
     display: inline-block; 
     position: relative; 
-    border-bottom: 4px solid #999;
+    border-bottom: 4px solid transparent;
     transition: all .4s ease;
 }
-.submenu li:hover {
-    background-color: rgb(17, 17, 17); 
-    border-bottom: 4px solid #fff;
+
+.submenu > li.active {
+    color: #fafafa;
+    background-color: #121212;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 4px solid rgb(6, 117, 117);
 }
 
 .submenu.showMenu {
