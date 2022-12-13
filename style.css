@@ -135,6 +135,7 @@ text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
     flex-direction: column;
     margin: 2rem auto;
     max-width: 80%;
+    transition: all 0.4s ease-in-out;
 }
 
 .div_item > h2 {
@@ -157,7 +158,7 @@ text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
 }
 
 .div_item > p.clicked {
-    display: block;S
+    display: block;
 }
 
 .div_btn {
