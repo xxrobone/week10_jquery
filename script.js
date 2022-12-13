@@ -41,11 +41,10 @@ $('.nav li').on({
 $('.nav li > .submenu')
   .parent()
   .click(function (e) {
-      e.preventDefault();
-      // prevents bubbling up the dom tree
-    e.stopPropagation();
+    e.preventDefault();
     // submenu variable is the list (children of submenu - ul )
     const submenu = $(this).children('.submenu');
+
     // Checks CSS content for display:[none|block]
     // found answer here https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery
     if ($(submenu).is(':hidden')) {
@@ -54,3 +53,61 @@ $('.nav li > .submenu')
       $(submenu).slideUp(200);
     }
   });
+
+$('.submenu2')
+  .parent()
+  .click(function (e) {
+    e.preventDefault();
+    // prevents bubbling up the dom tree
+    e.stopPropagation();
+    const submenu2 = $(this).children('.submenu2');
+
+    // Checks CSS content for display:[none|block]
+    // found answer here https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery
+    if ($(submenu2).is(':hidden')) {
+      $(submenu2).animate(
+        {
+          opacity: 1,
+          left: '100%',
+          top: '0',
+          width: 'toggle',
+        },
+        400,
+        function () {
+          // Animation complete.
+        }
+      );
+      /* .children(submenu2)
+        .each(function (i) {
+          $(this)
+            .animate({ left: '2px', opacity: '1' }, 1000, function () {})
+            .delay(++i * 1000);
+        }); */
+    } else {
+      $(submenu2).animate(
+        {
+          opacity: 0,
+          left: '0',
+          top: '0',
+          height: 'toggle',
+          width: 'toggle',
+          zIndex: '-1',
+        },
+        400,
+        function () {
+          // Animation complete.
+        }
+      );
+      /*  .css({ '-webkit-transform': 'translatX(-240px)' }); */
+    }
+  });
+
+// copying the menu active function
+$('.submenu2 > li ').on({
+  mouseenter: function () {
+    $(this).addClass('active');
+  },
+  mouseleave: function () {
+    $(this).removeClass('active');
+  },
+});
