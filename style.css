@@ -64,9 +64,11 @@ nav {
 }
 
 .nav li {
+    position: relative; 
     padding: 0.25rem 1rem;
     color: #282828;
     background-color: aliceblue;
+    border-bottom: 4px solid transparent;
 }
 
 .nav > li.active {
@@ -86,3 +88,33 @@ background-color: inherit;
 font-size: 1.4rem;
 text-transform: uppercase;
 }
+
+li:hover {
+    background-color: rgba(204, 204, 204, 0.432); 
+    border-bottom: 4px solid rgb(6, 117, 117);
+}
+
+.submenu {
+    display: none; 
+    position: absolute; 
+    left: -1px; 
+    top: 100%; 
+    width: 150px; 
+    margin-top: 1px;
+}
+
+.submenu li {
+    padding: 5px 10px; 
+    display: inline-block; 
+    position: relative; 
+    border-bottom: 4px solid #999;
+    transition: all .4s ease;
+}
+.submenu li:hover {
+    background-color: rgb(17, 17, 17); 
+    border-bottom: 4px solid #fff;
+}
+
+.submenu.showMenu {
+    display: block;
+ }
