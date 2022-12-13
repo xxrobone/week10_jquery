@@ -22,3 +22,14 @@ $('.btn:first-of-type').on({
     $(this).css('opacity', '1');
   },
 });
+
+/* nav */
+
+$('.nav li').on({
+  mouseenter: function () {
+    $(this).addClass('active');
+  },
+  mouseleave: function () {
+    $(this).removeClass('active');
+  },
+});

@@ -12,6 +12,7 @@ body {
 }
 
 header {
+    position: relative;
     width: 100%;
     height: 100px;
     text-align: center;
@@ -30,6 +31,13 @@ header > button {
     right: 2rem;
 }
 
+header p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #383838;
+}
+
 .btn {
     padding: 0.5rem 1.25rem;
     font-size: 1rem;
@@ -39,4 +47,42 @@ header > button {
     background: black;
     color: #fafafa;
     cursor: pointer;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: aqua;
+}
+
+.nav {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav li {
+    padding: 0.25rem 1rem;
+    color: #282828;
+    background-color: aliceblue;
+}
+
+.nav > li.active {
+    color: #fafafa;
+    background-color: #121212;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav li:last-child {
+    margin-right: 5rem;
+}
+
+.nav li a {
+text-decoration: none;
+color: inherit;
+background-color: inherit;
+font-size: 1.4rem;
+text-transform: uppercase;
 }
