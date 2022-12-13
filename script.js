@@ -111,3 +111,45 @@ $('.submenu2 > li ').on({
     $(this).removeClass('active');
   },
 });
+
+// random paragraph from array
+/* 
+let paragraphs = [
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sint animi similique amet placeat voluptatem harum, necessitatibus blanditiis, aliquam, ullam distinctio voluptate eaque unde quidem quos deleniti odio nulla? Ipsa reprehenderit, modi velit, odit repellendus debitis totam explicabo fuga ad quis quam dolor eaque voluptatum officia ducimus temporibus enim ab tempore non.',
+  'Dolorem assumenda libero, cupiditate maxime reprehenderit blanditiis odio officiis expedita suscipit asperiores nulla, a molestiae quae necessitatibus repudiandae inventore omnis autem maiores totam magnam.',
+  ' Quod aspernatur recusandae quidem corporis temporibus necessitatibus quaerat ut nulla natus? Ea error officiis consectetur nemo at quibusdam quod nulla, officia illum consequuntur nesciunt?',
+];
+
+function randomPara(arr) {
+  let para;
+ 
+  if (
+    Array.isArray(arr) &&
+    arr !== null &&
+    arr !== undefined &&
+    arr.length !== 0
+  ) {
+    para = arr[Math.floor(Math.random() * arr.length)];
+  } else {
+    console.log('No array of words is found, need one to function');
+  }
+  return para;
+}
+
+let menuArr = $('.nav > li');
+
+menuArr.each(function (i) {
+
+  $('<div/>', {
+    text: randomPara(paragraphs),
+    class: 'item',
+  }).appendTo('main');
+  $('<h2/>', {
+    text: $(this).text(),
+    class: 'headline',
+  }).appendTo('.item');
+
+  console.log(i + ': ' + $(this).text());
+});
+
+ */

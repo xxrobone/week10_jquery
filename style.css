@@ -128,3 +128,44 @@ text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
 .submenu2 > li {
     color: orangered;
 }
+
+.div_item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    max-width: 80%;
+}
+
+.div_item > h2 {
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.div_item p {
+    display: none;
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    border: 2px solid rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .25), inset 0 0 2px 0px white;
+    background: rgba(0, 0, 0, .0125);
+    overflow: hidden;
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.div_item > p.clicked {
+    display: block;S
+}
+
+.div_btn {
+    position: absolute;
+    top: 0;
+    right: 5vw;
+    padding: 0.5rem 1rem;
+    background-color: #121212;
+    color: #fafafa;
+    cursor: pointer;
+}
