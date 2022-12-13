@@ -23,13 +23,19 @@ $('.btn:first-of-type').on({
   },
 });
 
-/* nav */
+/* nav + submenu mouseenter, mouseleave and click*/
 
 $('.nav li').on({
   mouseenter: function () {
     $(this).addClass('active');
+    $(this).find('.submenu').toggle();
   },
   mouseleave: function () {
     $(this).removeClass('active');
+    $(this).find('.submenu').toggle();
+  },
+  click: function () {
+    /* $(this).siblings().find('.submenu').hide(); */
+    $(this).find('.submenu').toggle();
   },
 });
